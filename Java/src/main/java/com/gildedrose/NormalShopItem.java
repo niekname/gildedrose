@@ -10,7 +10,7 @@ public class NormalShopItem implements ShopItem {
 
     @Override
     public void update() {
-        item.sellIn--;
+        decreaseSellIn(item);
         decreaseQuality(item);
         if (item.sellIn < 0) decreaseQuality(item);
     }

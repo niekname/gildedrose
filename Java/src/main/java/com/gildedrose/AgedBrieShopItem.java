@@ -10,7 +10,7 @@ public class AgedBrieShopItem implements ShopItem {
 
     @Override
     public void update() {
-        item.sellIn--;
+        decreaseSellIn(item);
         increaseQuality(item);
         if (item.sellIn < 0) increaseQuality(item);
     }

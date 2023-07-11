@@ -10,7 +10,7 @@ public class BackstagePassesShopItem implements ShopItem {
 
     @Override
     public void update() {
-        item.sellIn--;
+        decreaseSellIn(item);
         increaseQuality(item);
         if (item.sellIn < 10) increaseQuality(item);
         if (item.sellIn < 5) increaseQuality(item);
