@@ -21,6 +21,7 @@ class GildedRose {
     private ShopItem shopItemFrom(final Item item) {
         if (item.name.equals(AGED_BRIE)) return new AgedBrieShopItem(item);
         if (item.name.equals(BACKSTAGE_PASSES)) return new BackstagePassesShopItem(item);
+        if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) return new SulfurasShopItem(item);
         return new NormalShopItem(item);
     }
 }
