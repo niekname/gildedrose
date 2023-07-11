@@ -1,11 +1,10 @@
 package com.gildedrose;
 
-public class SulfurasShopItem implements ShopItem {
+public class SulfurasShopItem extends ShopItem {
 
-    private final Item item;
 
     public SulfurasShopItem(final Item item) {
-        this.item = item;
+        super(item);
     }
 
     @Override

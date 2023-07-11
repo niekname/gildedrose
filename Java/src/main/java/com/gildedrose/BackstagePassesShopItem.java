@@ -1,19 +1,18 @@
 package com.gildedrose;
 
-public class BackstagePassesShopItem implements ShopItem {
+public class BackstagePassesShopItem extends ShopItem {
 
-    private final Item item;
 
     public BackstagePassesShopItem(final Item item) {
-        this.item = item;
+        super(item);
     }
 
     @Override
     public void update() {
-        decreaseSellIn(item);
-        increaseQuality(item);
-        if (item.sellIn < 10) increaseQuality(item);
-        if (item.sellIn < 5) increaseQuality(item);
-        if (sellInDateHasPassed(item)) item.quality = MINIMUM_QUALITY;
+        decreaseSellIn();
+        increaseQuality();
+        if (item.sellIn < 10) increaseQuality();
+        if (item.sellIn < 5) increaseQuality();
+        if (sellInDateHasPassed()) item.quality = MINIMUM_QUALITY;
     }
 }

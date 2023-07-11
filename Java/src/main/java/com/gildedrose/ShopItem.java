@@ -1,29 +1,35 @@
 package com.gildedrose;
 
-public interface ShopItem {
+public abstract class ShopItem {
 
-    String AGED_BRIE = "Aged Brie";
-    String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
-    String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
+    public static final String AGED_BRIE = "Aged Brie";
+    public static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
+    public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
 
-    int MAXIMUM_QUALITY = 50;
-    int MINIMUM_QUALITY = 0;
+    public static final int MAXIMUM_QUALITY = 50;
+    public static final int MINIMUM_QUALITY = 0;
 
-    void update();
+    final Item item;
 
-    default void decreaseSellIn(final Item item) {
+    public ShopItem(final Item item) {
+        this.item = item;
+    }
+
+    abstract void update();
+
+    void decreaseSellIn() {
         item.sellIn--;
     }
 
-    default void increaseQuality(final Item item) {
+    void increaseQuality() {
         if (item.quality < MAXIMUM_QUALITY) item.quality++;
     }
 
-    default void decreaseQuality(final Item item) {
+    void decreaseQuality() {
         if (item.quality > MINIMUM_QUALITY) item.quality--;
     }
 
-    default boolean sellInDateHasPassed(final Item item) {
+    boolean sellInDateHasPassed() {
         return item.sellIn < 0;
     }
 }

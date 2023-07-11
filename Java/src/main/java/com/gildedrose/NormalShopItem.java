@@ -1,17 +1,16 @@
 package com.gildedrose;
 
-public class NormalShopItem implements ShopItem {
+public class NormalShopItem extends ShopItem {
 
-    private final Item item;
 
     public NormalShopItem(final Item item) {
-        this.item = item;
+        super(item);
     }
 
     @Override
     public void update() {
-        decreaseSellIn(item);
-        decreaseQuality(item);
-        if (sellInDateHasPassed(item)) decreaseQuality(item);
+        decreaseSellIn();
+        decreaseQuality();
+        if (sellInDateHasPassed()) decreaseQuality();
     }
 }

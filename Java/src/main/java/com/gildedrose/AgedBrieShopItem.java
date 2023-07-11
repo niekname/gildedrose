@@ -1,17 +1,16 @@
 package com.gildedrose;
 
-public class AgedBrieShopItem implements ShopItem {
+public class AgedBrieShopItem extends ShopItem {
 
-    private final Item item;
 
     public AgedBrieShopItem(final Item item) {
-        this.item = item;
+        super(item);
     }
 
     @Override
     public void update() {
-        decreaseSellIn(item);
-        increaseQuality(item);
-        if (sellInDateHasPassed(item)) increaseQuality(item);
+        decreaseSellIn();
+        increaseQuality();
+        if (sellInDateHasPassed()) increaseQuality();
     }
 }
