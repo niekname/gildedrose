@@ -14,7 +14,11 @@ class GildedRose {
 
     public void updateQuality() {
         Arrays.stream(items)
-            .map(NormalShopItem::new)
-            .forEach(NormalShopItem::update);
+            .map(this::shopItemFrom)
+            .forEach(ShopItem::update);
+    }
+
+    private ShopItem shopItemFrom(final Item item) {
+        return new NormalShopItem(item);
     }
 }
