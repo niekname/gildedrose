@@ -20,6 +20,10 @@ public class SellIn {
         return sellIn < 0;
     }
 
+    boolean lessThanDaysRemaining(int days) {
+        return sellIn < days;
+    }
+
     int toInt() {
         return sellIn;
     }
