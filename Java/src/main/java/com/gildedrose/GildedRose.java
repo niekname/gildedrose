@@ -20,6 +20,7 @@ class GildedRose {
 
     private ShopItem shopItemFrom(final Item item) {
         if (item.name.equals(AGED_BRIE)) return new AgedBrieShopItem(item);
+        if (item.name.equals(BACKSTAGE_PASSES)) return new BackstagePassesShopItem(item);
         return new NormalShopItem(item);
     }
 }
