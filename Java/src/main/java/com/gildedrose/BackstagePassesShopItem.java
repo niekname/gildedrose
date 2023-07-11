@@ -10,17 +10,17 @@ public class BackstagePassesShopItem implements ShopItem {
 
     @Override
     public void update() {
-        if (item.quality < 50) {
+        if (item.quality < MAXIMUM_QUALITY) {
             item.quality++;
 
             if (item.sellIn < 11) {
-                if (item.quality < 50) {
+                if (item.quality < MAXIMUM_QUALITY) {
                     item.quality++;
                 }
             }
 
             if (item.sellIn < 6) {
-                if (item.quality < 50) {
+                if (item.quality < MAXIMUM_QUALITY) {
                     item.quality++;
                 }
             }

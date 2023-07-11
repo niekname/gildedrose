@@ -6,6 +6,8 @@ public interface ShopItem {
     String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
     String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
 
+    int MAXIMUM_QUALITY = 50;
+
     void update();
 
 }
