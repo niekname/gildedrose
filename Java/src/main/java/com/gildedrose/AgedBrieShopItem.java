@@ -12,6 +12,6 @@ public class AgedBrieShopItem implements ShopItem {
     public void update() {
         decreaseSellIn(item);
         increaseQuality(item);
-        if (item.sellIn < 0) increaseQuality(item);
+        if (sellInDateHasPassed(item)) increaseQuality(item);
     }
 }

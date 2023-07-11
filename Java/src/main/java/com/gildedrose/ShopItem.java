@@ -21,4 +21,8 @@ public interface ShopItem {
     default void decreaseQuality(final Item item) {
         if (item.quality > 0) item.quality--;
     }
+
+    default boolean sellInDateHasPassed(final Item item) {
+        return item.sellIn < 0;
+    }
 }

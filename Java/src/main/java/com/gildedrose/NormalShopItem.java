@@ -12,6 +12,6 @@ public class NormalShopItem implements ShopItem {
     public void update() {
         decreaseSellIn(item);
         decreaseQuality(item);
-        if (item.sellIn < 0) decreaseQuality(item);
+        if (sellInDateHasPassed(item)) decreaseQuality(item);
     }
 }
