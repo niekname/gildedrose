@@ -13,6 +13,6 @@ public class BackstagePassesShopItem extends ShopItem {
         increaseQuality();
         if (item.sellIn < 10) increaseQuality();
         if (item.sellIn < 5) increaseQuality();
-        if (sellInDateHasPassed()) item.quality = MINIMUM_QUALITY;
+        if (sellInDateHasPassed()) item.quality = Quality.MINIMUM.toInt();
     }
 }
