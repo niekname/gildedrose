@@ -44,7 +44,7 @@ class GildedRoseTest {
 
         assertThat(item.quality).isEqualTo(0);
     }
-
+    
     @Test
     void agedBrie_shouldDecreaseSellIn() {
         Item item = new Item(AGED_BRIE, 3, 7);
@@ -80,6 +80,16 @@ class GildedRoseTest {
 
         assertThat(item.quality).isEqualTo(50);
     }
+
+    @Test
+    void agedBrie_qualityIsNeverMoreThan50evenWhenIncreasingFast() {
+        Item item = new Item(AGED_BRIE, 0, 49);
+        GildedRose app = createGildedRose(item);
+        app.updateQuality();
+
+        assertThat(item.quality).isEqualTo(50);
+    }
+
 
     @Test
     void sulfuras_neverDecreases() {
