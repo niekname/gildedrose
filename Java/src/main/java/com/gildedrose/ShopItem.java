@@ -12,21 +12,23 @@ public abstract class ShopItem {
         this.item = item;
     }
 
-    abstract void update();
-
-    void decreaseSellIn() {
-        item.sellIn = SellIn.from(item.sellIn).decrease().toInt();
+    void update() {
+        item.sellIn = updateSellIn().toInt();
+        item.quality = updateQuality().toInt();
     }
 
-    boolean sellInDateHasPassed() {
-        return SellIn.from(item.sellIn).hasPassed();
+    SellIn updateSellIn() {
+        return getSellIn().decrease();
     }
 
-    void increaseQualityBy(int amount) {
-        item.quality = Quality.from(item.quality).increaseBy(amount).toInt();
+    abstract Quality updateQuality();
+
+    SellIn getSellIn() {
+        return SellIn.from(item.sellIn);
     }
 
-    void decreaseQualityBy(int amount) {
-        item.quality = Quality.from(item.quality).decreaseBy(amount).toInt();
+    Quality getQuality() {
+        return Quality.from(item.quality);
     }
+
 }

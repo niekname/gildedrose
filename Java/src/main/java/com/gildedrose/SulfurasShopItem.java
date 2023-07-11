@@ -8,6 +8,12 @@ public class SulfurasShopItem extends ShopItem {
     }
 
     @Override
-    public void update() {
+    SellIn updateSellIn() {
+        return getSellIn();
+    }
+
+    @Override
+    Quality updateQuality() {
+        return getQuality();
     }
 }
