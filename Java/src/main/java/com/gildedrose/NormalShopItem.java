@@ -11,13 +11,13 @@ public class NormalShopItem implements ShopItem {
     @Override
     public void update() {
         if (item.quality > 0) {
-            item.quality = item.quality - 1;
+            item.quality--;
         }
-        item.sellIn = item.sellIn - 1;
+        item.sellIn--;
 
         if (item.sellIn < 0) {
             if (item.quality > 0) {
-                item.quality = item.quality - 1;
+                item.quality--;
             }
         }
     }
