@@ -2,6 +2,7 @@ package com.gildedrose;
 
 public class SulfurasShopItem extends ShopItem {
 
+    public static final String NAME = "Sulfuras, Hand of Ragnaros";
 
     public SulfurasShopItem(final Item item) {
         super(item);

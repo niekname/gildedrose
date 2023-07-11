@@ -2,10 +2,6 @@ package com.gildedrose;
 
 import java.util.Arrays;
 
-import static com.gildedrose.ShopItem.AGED_BRIE;
-import static com.gildedrose.ShopItem.BACKSTAGE_PASSES;
-import static com.gildedrose.ShopItem.SULFURAS_HAND_OF_RAGNAROS;
-
 class GildedRose {
     Item[] items;
 
@@ -20,9 +16,9 @@ class GildedRose {
     }
 
     private ShopItem shopItemFrom(final Item item) {
-        if (item.name.equals(AGED_BRIE)) return new AgedBrieShopItem(item);
-        if (item.name.equals(BACKSTAGE_PASSES)) return new BackstagePassesShopItem(item);
-        if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) return new SulfurasShopItem(item);
+        if (item.name.equals(AgedBrieShopItem.NAME)) return new AgedBrieShopItem(item);
+        if (item.name.equals(BackstagePassesShopItem.NAME)) return new BackstagePassesShopItem(item);
+        if (item.name.equals(SulfurasShopItem.NAME)) return new SulfurasShopItem(item);
         return new NormalShopItem(item);
     }
 }
