@@ -21,26 +21,7 @@ public class NormalShopItem implements ShopItem {
                     item.quality = item.quality - 1;
                 }
             }
-        } else {
-            if (item.quality < 50) {
-                item.quality = item.quality + 1;
-
-                if (item.name.equals(BACKSTAGE_PASSES)) {
-                    if (item.sellIn < 11) {
-                        if (item.quality < 50) {
-                            item.quality = item.quality + 1;
-                        }
-                    }
-
-                    if (item.sellIn < 6) {
-                        if (item.quality < 50) {
-                            item.quality = item.quality + 1;
-                        }
-                    }
-                }
-            }
         }
-
         if (!item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
             item.sellIn = item.sellIn - 1;
         }
@@ -53,12 +34,6 @@ public class NormalShopItem implements ShopItem {
                             item.quality = item.quality - 1;
                         }
                     }
-                } else {
-                    item.quality = item.quality - item.quality;
-                }
-            } else {
-                if (item.quality < 50) {
-                    item.quality = item.quality + 1;
                 }
             }
         }
