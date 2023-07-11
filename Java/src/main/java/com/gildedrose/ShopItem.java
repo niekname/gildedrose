@@ -1,10 +1,10 @@
 package com.gildedrose;
 
-public abstract class ShopItem {
+abstract class ShopItem {
 
     final Item item;
 
-    public ShopItem(final Item item) {
+    ShopItem(final Item item) {
         this.item = item;
     }
 

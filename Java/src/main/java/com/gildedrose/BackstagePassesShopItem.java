@@ -1,9 +1,10 @@
 package com.gildedrose;
 
-public class BackstagePassesShopItem extends ShopItem {
+class BackstagePassesShopItem extends ShopItem {
 
     public static final String NAME = "Backstage passes to a TAFKAL80ETC concert";
-    public BackstagePassesShopItem(final Item item) {
+
+    BackstagePassesShopItem(final Item item) {
         super(item);
     }
 

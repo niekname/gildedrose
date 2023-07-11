@@ -1,8 +1,8 @@
 package com.gildedrose;
 
-public class NormalShopItem extends ShopItem {
+class NormalShopItem extends ShopItem {
 
-    public NormalShopItem(final Item item) {
+    NormalShopItem(final Item item) {
         super(item);
     }
 

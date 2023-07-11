@@ -1,9 +1,10 @@
 package com.gildedrose;
 
-public class AgedBrieShopItem extends ShopItem {
+class AgedBrieShopItem extends ShopItem {
 
     public static final String NAME = "Aged Brie";
-    public AgedBrieShopItem(final Item item) {
+
+    AgedBrieShopItem(final Item item) {
         super(item);
     }
 
