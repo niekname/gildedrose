@@ -2,9 +2,9 @@ package com.gildedrose;
 
 import org.junit.jupiter.api.Test;
 
-import static com.gildedrose.GildedRose.AGED_BRIE;
-import static com.gildedrose.GildedRose.BACKSTAGE_PASSES;
-import static com.gildedrose.GildedRose.SULFURAS_HAND_OF_RAGNAROS;
+import static com.gildedrose.ShopItem.AGED_BRIE;
+import static com.gildedrose.ShopItem.BACKSTAGE_PASSES;
+import static com.gildedrose.ShopItem.SULFURAS_HAND_OF_RAGNAROS;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class GildedRoseTest {
