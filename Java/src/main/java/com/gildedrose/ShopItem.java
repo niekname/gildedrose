@@ -15,9 +15,12 @@ public abstract class ShopItem {
     abstract void update();
 
     void decreaseSellIn() {
-        item.sellIn--;
+        item.sellIn = SellIn.from(item.sellIn).decrease().toInt();
     }
 
+    boolean sellInDateHasPassed() {
+        return SellIn.from(item.sellIn).hasPassed();
+    }
 
     void increaseQualityBy(int amount) {
         item.quality = Quality.from(item.quality).increaseBy(amount).toInt();
@@ -25,9 +28,5 @@ public abstract class ShopItem {
 
     void decreaseQualityBy(int amount) {
         item.quality = Quality.from(item.quality).decreaseBy(amount).toInt();
-    }
-
-    boolean sellInDateHasPassed() {
-        return item.sellIn < 0;
     }
 }
