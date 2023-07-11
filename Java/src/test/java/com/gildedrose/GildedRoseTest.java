@@ -152,6 +152,33 @@ class GildedRoseTest {
         assertThat(item.quality).isEqualTo(50);
     }
 
+    @Test
+    void conjuredItem_shouldDecreaseSellIn() {
+        Item item = new Item(ConjuredShopItem.NAME, 3, 7);
+        GildedRose app = createGildedRose(item);
+        app.updateQuality();
+
+        assertThat(item.sellIn).isEqualTo(2);
+    }
+
+    @Test
+    void conjuredItem_shouldDecreaseQualityBy2() {
+        Item item = new Item(ConjuredShopItem.NAME, 3, 7);
+        GildedRose app = createGildedRose(item);
+        app.updateQuality();
+
+        assertThat(item.quality).isEqualTo(5);
+    }
+
+    @Test
+    void conjuredItem_qualityIsNeverNegative() {
+        Item item = new Item(ConjuredShopItem.NAME, 3, 0);
+        GildedRose app = createGildedRose(item);
+        app.updateQuality();
+
+        assertThat(item.quality).isEqualTo(0);
+    }
+
     private GildedRose createGildedRose(Item item) {
         return new GildedRose(new Item[]{item});
     }

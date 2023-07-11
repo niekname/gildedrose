@@ -19,6 +19,7 @@ class GildedRose {
         if (item.name.equals(AgedBrieShopItem.NAME)) return new AgedBrieShopItem(item);
         if (item.name.equals(BackstagePassesShopItem.NAME)) return new BackstagePassesShopItem(item);
         if (item.name.equals(SulfurasShopItem.NAME)) return new SulfurasShopItem(item);
+        if (item.name.equals(ConjuredShopItem.NAME)) return new ConjuredShopItem(item);
         return new NormalShopItem(item);
     }
 }
