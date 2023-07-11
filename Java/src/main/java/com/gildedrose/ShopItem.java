@@ -7,6 +7,7 @@ public interface ShopItem {
     String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
 
     int MAXIMUM_QUALITY = 50;
+    int MINIMUM_QUALITY = 0;
 
     void update();
 
@@ -19,7 +20,7 @@ public interface ShopItem {
     }
 
     default void decreaseQuality(final Item item) {
-        if (item.quality > 0) item.quality--;
+        if (item.quality > MINIMUM_QUALITY) item.quality--;
     }
 
     default boolean sellInDateHasPassed(final Item item) {
