@@ -11,16 +11,7 @@ public class AgedBrieShopItem implements ShopItem {
     @Override
     public void update() {
         item.sellIn--;
-
-        if (item.quality < MAXIMUM_QUALITY) {
-            item.quality++;
-        }
-
-
-        if (item.sellIn < 0) {
-            if (item.quality < MAXIMUM_QUALITY) {
-                item.quality++;
-            }
-        }
+        increaseQuality(item);
+        if (item.sellIn < 0) increaseQuality(item);
     }
 }

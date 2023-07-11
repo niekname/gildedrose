@@ -11,25 +11,9 @@ public class BackstagePassesShopItem implements ShopItem {
     @Override
     public void update() {
         item.sellIn--;
-
-        if (item.quality < MAXIMUM_QUALITY) {
-            item.quality++;
-
-            if (item.sellIn < 10) {
-                if (item.quality < MAXIMUM_QUALITY) {
-                    item.quality++;
-                }
-            }
-
-            if (item.sellIn < 5) {
-                if (item.quality < MAXIMUM_QUALITY) {
-                    item.quality++;
-                }
-            }
-        }
-
-        if (item.sellIn < 0) {
-            item.quality = 0;
-        }
+        increaseQuality(item);
+        if (item.sellIn < 10) increaseQuality(item);
+        if (item.sellIn < 5) increaseQuality(item);
+        if (item.sellIn < 0) item.quality = 0;
     }
 }

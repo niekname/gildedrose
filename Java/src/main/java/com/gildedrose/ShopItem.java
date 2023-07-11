@@ -10,4 +10,11 @@ public interface ShopItem {
 
     void update();
 
+    default void increaseQuality(final Item item) {
+        if (item.quality < MAXIMUM_QUALITY) item.quality++;
+    }
+
+    default void decreaseQuality(final Item item) {
+        if (item.quality > 0) item.quality--;
+    }
 }
