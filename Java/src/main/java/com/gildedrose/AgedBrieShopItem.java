@@ -10,7 +10,7 @@ public class AgedBrieShopItem extends ShopItem {
     @Override
     public void update() {
         decreaseSellIn();
-        increaseQuality();
-        if (sellInDateHasPassed()) increaseQuality();
+        if (sellInDateHasPassed()) increaseQualityBy(2);
+        else increaseQualityBy(1);
     }
 }

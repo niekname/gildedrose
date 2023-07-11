@@ -5,7 +5,7 @@ public abstract class ShopItem {
     public static final String AGED_BRIE = "Aged Brie";
     public static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
     public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
-    
+
     final Item item;
 
     public ShopItem(final Item item) {
@@ -19,12 +19,12 @@ public abstract class ShopItem {
     }
 
 
-    void increaseQuality() {
-        item.quality = Quality.from(item.quality).increase().toInt();
+    void increaseQualityBy(int amount) {
+        item.quality = Quality.from(item.quality).increaseBy(amount).toInt();
     }
 
-    void decreaseQuality() {
-        item.quality = Quality.from(item.quality).decrease().toInt();
+    void decreaseQualityBy(int amount) {
+        item.quality = Quality.from(item.quality).decreaseBy(amount).toInt();
     }
 
     boolean sellInDateHasPassed() {

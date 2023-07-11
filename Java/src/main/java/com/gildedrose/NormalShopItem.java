@@ -10,7 +10,7 @@ public class NormalShopItem extends ShopItem {
     @Override
     public void update() {
         decreaseSellIn();
-        decreaseQuality();
-        if (sellInDateHasPassed()) decreaseQuality();
+        if (sellInDateHasPassed()) decreaseQualityBy(2);
+        else decreaseQualityBy(1);
     }
 }

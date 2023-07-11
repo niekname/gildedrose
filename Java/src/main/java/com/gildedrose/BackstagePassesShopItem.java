@@ -10,9 +10,9 @@ public class BackstagePassesShopItem extends ShopItem {
     @Override
     public void update() {
         decreaseSellIn();
-        increaseQuality();
-        if (item.sellIn < 10) increaseQuality();
-        if (item.sellIn < 5) increaseQuality();
+        if (item.sellIn < 5) increaseQualityBy(3);
+        else if (item.sellIn < 10) increaseQualityBy(2);
+        else increaseQualityBy(1);
         if (sellInDateHasPassed()) item.quality = Quality.MINIMUM.toInt();
     }
 }

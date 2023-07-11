@@ -15,14 +15,22 @@ class Quality {
         return new Quality(quality);
     }
 
-    Quality increase() {
-        var newQuality = Quality.from(quality + 1);
+    Quality increaseBy(int amount) {
+        var newQuality = plus(amount);
         return newQuality.hasPassedMaximumLimit() ? MAXIMUM : newQuality;
     }
 
-    Quality decrease() {
-        var newQuality = Quality.from(quality - 1);
+    Quality decreaseBy(int amount) {
+        var newQuality = minus(amount);
         return newQuality.hasPassedMinimumLimit() ? MINIMUM : newQuality;
+    }
+
+    private Quality plus(int amount) {
+        return new Quality(quality + amount);
+    }
+
+    private Quality minus(int amount) {
+        return new Quality(quality - amount);
     }
 
     private boolean hasPassedMinimumLimit() {
