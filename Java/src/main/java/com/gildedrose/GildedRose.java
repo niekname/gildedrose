@@ -11,15 +11,7 @@ class GildedRose {
 
     public void updateQuality() {
         Arrays.stream(items)
-            .map(this::shopItemFrom)
+            .map(ShopItemFactory::shopItemFrom)
             .forEach(ShopItem::update);
-    }
-
-    private ShopItem shopItemFrom(final Item item) {
-        if (item.name.equals(AgedBrieShopItem.NAME)) return new AgedBrieShopItem(item);
-        if (item.name.equals(BackstagePassesShopItem.NAME)) return new BackstagePassesShopItem(item);
-        if (item.name.equals(SulfurasShopItem.NAME)) return new SulfurasShopItem(item);
-        if (item.name.equals(ConjuredShopItem.NAME)) return new ConjuredShopItem(item);
-        return new NormalShopItem(item);
     }
 }
