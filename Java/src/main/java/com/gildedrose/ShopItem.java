@@ -20,11 +20,11 @@ abstract class ShopItem {
     abstract Quality updateQuality();
 
     SellIn getSellIn() {
-        return SellIn.from(item.sellIn);
+        return SellIn.of(item.sellIn);
     }
 
     Quality getQuality() {
-        return Quality.from(item.quality);
+        return Quality.of(item.quality);
     }
 
 }

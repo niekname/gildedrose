@@ -8,7 +8,7 @@ class SellIn {
         this.sellIn = sellIn;
     }
 
-    static SellIn from(int sellIn) {
+    static SellIn of(int sellIn) {
         return new SellIn(sellIn);
     }
 

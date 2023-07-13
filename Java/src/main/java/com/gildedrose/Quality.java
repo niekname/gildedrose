@@ -11,7 +11,7 @@ class Quality {
         this.quality = quality;
     }
 
-    static Quality from(int quality) {
+    static Quality of(int quality) {
         return new Quality(quality);
     }
 
